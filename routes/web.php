@@ -11,6 +11,19 @@
 |
 */
 
+//
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+//Todas las rutas especificadas en este Route::group pertenecen al grupo articles
+Route::group(['prefix' => 'articles'] , function (){
+
+    //Lo que sigue del arroba es el metodo a ejecutar
+    Route::get('view/{id}', [
+      'uses' => 'TestController@view',
+      'as'   => 'articlesView'
+    ]);
+
 });
