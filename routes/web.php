@@ -14,7 +14,7 @@
 //
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('testViews.testingView');
 });
 
 //Todas las rutas especificadas en este Route::group pertenecen al grupo articles
