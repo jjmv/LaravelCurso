@@ -3,9 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Article extends Model
 {
+    use Sluggable;
+
+    protected $sluggable = [
+      'build_from' => "title",
+      'save_to' => "slug"
+    ];
+
     protected $table = 'articles';  //Tabla con la que trabajará.
 
     //Campos a ser mostrados
